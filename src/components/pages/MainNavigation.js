@@ -1,35 +1,31 @@
-
 import * as React from "react";
 import classes from './MainNavigation.module.css';
 import skynet from './skynet.png';
-import { BrowserRouter as Router, Route, Routes, BrowserRouter } from "react-router-dom";
-// import Logowanie from "./links/links";
 import { Link } from "react-router-dom";
 
 function MainNavigation(){
 
-    const [state,setState] = React.useState(false);
-    let url = "logowanie";
-
     return (
-        <header className={classes.logout}>
+        <div className={classes.logout}>
             <div className={classes.logow1}>
-                <a href="/"><img id="BHH" alt="Nieznany" src={skynet} /></a>
+                <Link to="/home"><img src={skynet}></img></Link>
             </div>
             <div>
-                <Router>
-                <button className={classes.btn1}>
-                        <Link to="/logowanie">
-                        
-                        </Link></button>
-                    
-                </Router>
-                {/* <a href={url}> */}
-                    {/* <button className={classes.btn1}>Logowanie</button>         */}
-                {/* </a> */}
+                <nav className="navigationHolder">
+                    <Link to="/home">Home</Link>
+                    <Link to="/home">Matrix</Link>
+                    <Link to="/home">Zdjęcia</Link>
+                    <Link to="/home">F5</Link>
+                    <Link to="/home">Kontakt</Link>
+                    <Link to="/home">SkyNET</Link>
+                </nav>
             </div>
 
-        </header>
+            <div>
+                <Link to="/logowanie"><button className={classes.btn1}>Logowanie</button></Link>
+            </div>
+
+        </div>
     );
 }
 

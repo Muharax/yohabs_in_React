@@ -2,10 +2,12 @@ import React from "react";
 
 
 
-function logowanie(){
+function About(){
     return(
         <div>
-            HELLOW
+            About
         </div>
     )
 }
+
+export default About;
