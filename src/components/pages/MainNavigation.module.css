@@ -1,0 +1,74 @@
+.logout{
+    display: flex;
+    background-color: black;
+    box-shadow: 0 0 2px 1px #08d1ff;
+    margin-bottom: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+.mobilemenu .lines {
+    border-bottom: 15px double #f8f8f8; 
+    border-top: 5px solid #f8f8f8; 
+    content:"";
+    height: 5px; 
+    width:20px;
+    padding-right:15px;
+    float: right;
+}
+/*Make dropdown links appear inline*/
+.mobilemenu ul {
+    position: absolute;
+    display: none;
+}
+/*Create vertical spacing*/
+.mobilemenu li {
+    margin-bottom: 1px;
+}
+/*Make all menu links full width*/
+.mobilemenu ul li, .mobilemenu li a {
+    width: auto;
+}
+/*Display 'show menu' link*/
+.mobilemenu .showmenu {
+    display:block;
+}
+.logowanieIn{
+    background-color: #00ff37;
+    border: 1px solid black;
+    min-width: 120px;
+    margin-right: 10px;
+    transition: 0.2s;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 7px;
+}
+a{
+    text-decoration: none;
+}
+.logowanieIn:hover{
+    background-color: #008920;
+}
+
+
+.btn1{
+    background-color: #00ff37;
+    width: 150px;
+    border: 0px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    transition: 200ms linear;
+    font-weight: 900;
+    border-radius: 4px;
+    
+}
+
+.btn1:hover{
+    background-color: #000000;
+    color: aliceblue;
+    border: 1px solid #00ff37;
+    box-shadow: 0px 0px 12px 0px #00ff37;
+    
+
+}
