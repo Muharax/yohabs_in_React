@@ -13,10 +13,10 @@ function MainNavigation(){
             <div>
                 <nav className="navigationHolder">
                     <Link to="/home">Home</Link>
-                    <Link to="/home">Matrix</Link>
-                    <Link to="/home">Zdjęcia</Link>
+                    <Link to="/matrix">Matrix</Link>
+                    <Link to="/pictures">Zdjęcia</Link>
                     <Link to="/home">F5</Link>
-                    <Link to="/home">Kontakt</Link>
+                    <Link to="/contact">Kontakt</Link>
                     <Link to="/home">SkyNET</Link>
                 </nav>
             </div>

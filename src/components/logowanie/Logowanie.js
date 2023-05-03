@@ -1,5 +1,5 @@
 import React from "react";
-import classes from './Logowanie.module.css'
+import classes from './Logowanie.module.css';
 
 
 function Logowanie(){
