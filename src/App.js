@@ -30,7 +30,6 @@ class App extends React.Component {
     return (
     <>
       <div className="App">
-      <div className="tlo" style={{backgroundImage: `url(${background})`}}>
         <MainNavigation/>
             <Routes>
               <Route path="/home" element={<Home />} />
@@ -39,7 +38,6 @@ class App extends React.Component {
               <Route path="/contact" element={<Contact />} />
               <Route path="/logowanie" element={<Logowanie />} />
             </Routes>         
-          </div>
       </div>
     </>
     )

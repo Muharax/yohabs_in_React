@@ -16,7 +16,7 @@ for(let x = 0; x < columns; x++)
     drops[x] = 1; 
   
 function draw(timestamp) {    
-    requestAnimationFrame(draw);
+    
      
     if(then === undefined){
         then = timestamp;
@@ -24,7 +24,7 @@ function draw(timestamp) {
 
     const delta = timestamp - then
      
-    if (delta > interval) {       
+    if (delta > interval) {
         then = timestamp - (delta % interval);
          
         ctx.fillStyle = "rgba(0, 0, 0, 0.05)";

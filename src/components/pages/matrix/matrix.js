@@ -7,6 +7,7 @@ import Canvas from "./canvas";
 
 const draw = (context) => {
     
+    
     let znak = "/\\ANLO甶 男甸甹町!$%$#SWZ\\//";
     znak = znak.split("");
 
@@ -23,6 +24,7 @@ const draw = (context) => {
     context.fillStyle = "#0F0";
     context.font = font_size + "px arial";
     for(let i = 0; i < drops.length; i++){
+        
         let text = znak[Math.floor(Math.random()*znak.length)];
         context.fillText(text, i*font_size, drops[i]*font_size);
         if(drops[i]*font_size > canvasHeight && Math.random() > 0.975)
@@ -33,11 +35,13 @@ const draw = (context) => {
     
   };
 
+  
+
 function Matrix(){
     return(
         <div className="windowLife">
             <div id="about">
-            <Canvas draw={draw} width={canvasWidth} height={canvasHeight} />
+                <Canvas draw={draw} width={canvasWidth} height={canvasHeight} />
             </div>
 
 
