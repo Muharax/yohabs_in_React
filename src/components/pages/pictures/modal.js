@@ -1,8 +1,8 @@
 const Modal = ({
     clickedImg,
     setClickedImg,
-    handelRotationRight,
-    handelRotationLeft
+    handleRotationRight,
+    handleRotationLeft
   }) => {
     const handleClick = (e) => {
       if (e.target.classList.contains("dismiss")) {
@@ -13,11 +13,11 @@ const Modal = ({
     return (
       <>
         <div className="overlay dismiss" onClick={handleClick}>
-          <img src={clickedImg} alt="bigger pic" />
+          <img src={require(`./picturesImg/photos/${clickedImg}`)} alt="bigger pic" />
           <span className="dismiss" onClick={handleClick}>
             X
           </span>
-          <div onClick={handelRotationLeft} className="overlay-arrows_left">
+          <div onClick={handleRotationLeft} className="overlay-arrows_left">
             <div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -33,7 +33,7 @@ const Modal = ({
               </svg>
             </div>
           </div>
-          <div onClick={handelRotationRight} className="overlay-arrows_right">
+          <div onClick={handleRotationRight} className="overlay-arrows_right">
             <div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"

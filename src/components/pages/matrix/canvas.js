@@ -1,18 +1,6 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-// useEffect(() => {
-//   const Canvas = ()
-//   const context = canvas.current.getContext('2D');
-//   const callback = () => {
-//     draw(context);
-//     requestAnimationFrame(callback);
-//   }
-
-//   callback();
-// }, []
-
-
 const Canvas = ({draw, width, height}) => {
   const canvas = React.useRef();
   React.useEffect(() => {

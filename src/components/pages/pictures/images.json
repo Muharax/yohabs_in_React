@@ -1,13 +1,34 @@
 {
     "data":[
         {
-            "text": "Idi na chuj",
+            "text": "Zachód sońca",
             "link": "1.jpg"
         },
         {
             "text": "Description 2",
             "link": "2.jpg"
+        },
+        {
+            "text": "D3",
+            "link": "3.jpg"
+        },
+        {
+            "text": "D4",
+            "link": "4.jpg"
+        },
+        {
+            "text": "D5",
+            "link": "5.jpg"
+        },
+        {
+            "text": "D6",
+            "link": "6.jpg"
+        },
+        {
+            "text": "D7",
+            "link": "7.jpg"
         }
+        
         
     ]
 

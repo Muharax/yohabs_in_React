@@ -18,6 +18,7 @@ function MainNavigation(){
                     <Link to="/home">F5</Link>
                     <Link to="/contact">Kontakt</Link>
                     <Link to="/home">SkyNET</Link>
+                    <Link to="/test">TEST</Link>
                 </nav>
             </div>
 
