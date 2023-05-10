@@ -32,6 +32,7 @@ class App extends React.Component {
       <div className="App">
         <MainNavigation/>
             <Routes>
+              <Route path="/" element={<Home />} />
               <Route path="/home" element={<Home />} />
               <Route path="/matrix" element={<Matrix />} />
               <Route path="/pictures" element={<Pictures />} />
