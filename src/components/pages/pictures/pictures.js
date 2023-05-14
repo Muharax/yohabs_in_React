@@ -9,8 +9,6 @@ function Pictures (){
   const [currentIndex, setCurrentIndex] = useState(null);
 
   const handleClick = (item, index) => {
-    console.log(index);
-    console.log(item.link);
     setCurrentIndex(index);
     setClickedImg(item.link);
   };

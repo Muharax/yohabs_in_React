@@ -154,10 +154,11 @@ input:focus{
 .ImgImg{
   width: 200px;
   height: 140px;
-  border: 1px solid greenyellow;
+  /* border: 1px solid greenyellow; */
 }
 .wrapper-images{
-  border: 1px solid green;
+  /* border: 1px solid green; */
+  padding: 5px;
 }
 .wrapper{
   display: flex;
@@ -166,3 +167,29 @@ input:focus{
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
+
+
+
+
+
+
+
+/* ============================================================== */
+::-webkit-scrollbar-thumb, ::-webkit-scrollbar-track {
+  border: 0!important;
+  box-shadow: none!important;
+}
+::-webkit-scrollbar-thumb {
+  min-height: 28px!important;
+  background: #19bb19!important;
+}
+::-webkit-scrollbar-corner, ::-webkit-scrollbar-track {
+  background: #282c34!important;
+}
+::-webkit-scrollbar {
+  width: 10px!important;
+  height: 10px!important;
+  background: #08d1ff!important;
+  border: 1px solid #252525!important;
+}
+/* ============================================================== */

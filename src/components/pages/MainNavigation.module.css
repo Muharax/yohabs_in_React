@@ -1,7 +1,7 @@
 .logout{
     display: flex;
     background-color: black;
-    box-shadow: 0 0 2px 1px #08d1ff;
+    box-shadow: 0 0 2px 1px #19bb19;
     justify-content: space-between;
     align-items: center;
 }
@@ -50,7 +50,7 @@ a{
 
 
 .btn1{
-    background-color: #00ff37;
+    background-color: #19bb19;
     width: 150px;
     border: 0px;
     margin-right: 10px;
