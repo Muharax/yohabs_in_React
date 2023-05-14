@@ -1,59 +1,72 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useEffect } from 'react'
 
-const Canvas = props => {
-  
-  const canvasRef = useRef(null)
-  
-  const draw = (ctx) => {
-    const font_size = 14;
-    const c = 300;
-    const columns = 10;
-    const Wwidth = 400;
-    const Hheight = 200;
 
-    let znak = "/\\ANLO甶 男甸甹町!$%$#SWZ\\//";
-    znak = znak.split("");
+function App() {
+  useEffect(() => {
+    const fps = 19;
+    const interval = 1000/fps;
+    let then;
+
+
+    let c = document.querySelector("#c");
+    let ctx = c.getContext("2d");
+    let w = c.width;
+    let h = c.height;
+
+    let symbol = "/\\ANLO甶 男甸甹町!$%$#SWZ\\//";
+    symbol = symbol.split("");
+
+    let font_size = 6;
+    let columns = w/font_size;
 
     let drops = [];
     for(let x = 0; x < columns; x++)
-    drops[x] = 1; 
+        drops[x] = 1;
+
+draw();
+
+function draw(timestamp){
+    if(then === undefined){
+      then = timestamp;
+     }
+
+    const delta = timestamp - then
+  
+    if (delta > interval) {
+      then = timestamp - (delta % interval);
+
 
     ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
-    ctx.fillRect(0, 0, Wwidth, Hheight);
+    ctx.fillRect(0, 0, w, h);
     
     ctx.fillStyle = "#0F0";
-    ctx.font = 6 + "px arial";
-    for(let i = 0; i < drops.length; i++){
-        let text = znak[Math.floor(Math.random()*znak.length)];
+    ctx.font = font_size + "px arial";
+    for(let i = 0; i < drops.length; i++)
+    {
+        let text = symbol[Math.floor(Math.random()*symbol.length)];
         ctx.fillText(text, i*font_size, drops[i]*font_size);
-        if(drops[i]*font_size > c.height && Math.random() > 0.975)
+        if(drops[i]*font_size > h && Math.random() > 0.975)
             drops[i] = 0;
 
         drops[i]++;
     }
   }
-  
-  useEffect(() => {
-    
-    const canvas = canvasRef.current
-    const context = canvas.getContext('2d')
-    let frameCount = 0
-    let animationFrameId
-    
-    //Our draw came here
-    const render = () => {
-      frameCount++
-      draw(context, frameCount)
-      animationFrameId = window.requestAnimationFrame(render)
-    }
-    render()
-    
-    return () => {
-      window.cancelAnimationFrame(animationFrameId)
-    }
-  }, [draw])
-  
-  return <canvas ref={canvasRef} {...props}/>
-}
 
-export default Canvas
+      requestAnimationFrame(draw);
+    }
+  }, []);
+
+  return (
+    <>
+      <h1>hello world</h1>
+      <div className='divaldo'>
+        <canvas
+        id="c"
+        width="1000"
+        height="437"
+      ></canvas>
+    </div>
+    </>
+  );
+}
+export default App;

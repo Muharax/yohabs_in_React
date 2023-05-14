@@ -1,55 +1,71 @@
-import React from "react";
-import Canvas from "./canvas";
-
-    let canvasWidth = 620;
-    let canvasHeight = 400;
+import React, { useEffect } from 'react'
 
 
-const draw = (context) => {
-    
-    
-    let znak = "/\\ANLO甶 男甸甹町!$%$#SWZ\\//";
-    znak = znak.split("");
+function App() {
+  useEffect(() => {
+    const fps = 19;
+    const interval = 1000/fps;
+    let then;
 
-    const font_size = 8;
-    let columns = canvasWidth/font_size;
+    let c = document.querySelector("#c");
+    let ctx = c.getContext("2d");
+    let w = c.width = window.innerWidth;
+    let h = c.height = window.innerHeight;
+
+    let symbol = "/\\ANLO甶 男甸甹町!$%$#SWZ\\//";
+    symbol = symbol.split("");
+
+    let font_size = 8;
+    let columns = w/font_size;
 
     let drops = [];
     for(let x = 0; x < columns; x++)
-        drops[x] = 1; 
+        drops[x] = 1;
+
+draw();
+
+function draw(timestamp){
+    if(then === undefined){
+      then = timestamp;
+     }
+
+    const delta = timestamp - then
+  
+    if (delta > interval) {
+      then = timestamp - (delta % interval);
+
+
+    ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+    ctx.fillRect(0, 0, w, h);
     
-    context.fillStyle = "rgba(0, 0, 0, 0.05)";
-    context.fillRect(0, 0, canvasWidth, canvasHeight);
-    
-    context.fillStyle = "#0F0";
-    context.font = font_size + "px arial";
-    for(let i = 0; i < drops.length; i++){
-        
-        let text = znak[Math.floor(Math.random()*znak.length)];
-        context.fillText(text, i*font_size, drops[i]*font_size);
-        if(drops[i]*font_size > canvasHeight && Math.random() > 0.975)
+    ctx.fillStyle = "#0F0";
+    ctx.font = font_size + "px arial";
+    for(let i = 0; i < drops.length; i++)
+    {
+        let text = symbol[Math.floor(Math.random()*symbol.length)];
+        ctx.fillText(text, i*font_size, drops[i]*font_size);
+        if(drops[i]*font_size > h && Math.random() > 0.975)
             drops[i] = 0;
 
         drops[i]++;
     }
-    
-  };
+  }
 
-  
+      requestAnimationFrame(draw);
+    }
+  }, []);
 
-function Matrix(){
-    return(
-        <div className="windowLife">
-            <div id="about">
-                <Canvas draw={draw} width={canvasWidth} height={canvasHeight} />
-            </div>
-
-
-            <div className="underLink">
-                <a class="matrix-fullscreen" target="_blank" href="matrix-fullscreen/index.html"> Pełny ekran </a>    
-            </div>
+  return (
+    <div className='windowLife'>
+        {/* <h1>hello world</h1> */}
+            <div className='divaldo'>
+                <canvas
+                id="c"
+                // width="900"
+                // height="420"
+            ></canvas>
         </div>
-    )
+    </div>
+  );
 }
-
-export default Matrix;
+export default App;
