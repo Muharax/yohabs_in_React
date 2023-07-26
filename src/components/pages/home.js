@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 function Home(){
     return(
         <div className="windowLife">
-            <div class="home">
+            <div className="home">
 
                 <h1>!! WELCOME !!</h1>
 
