@@ -5,9 +5,11 @@ function Contact() {
     email: '',
     temat: '',
     wiadomosc: ''
-
-    //dodaj więcej pól formularza według potrzeb
   });
+
+
+  const [messageStatus, setMessageStatus] = useState(null); // Nowy stan lokalny
+
 
   const handleChange = e => {
     setForm({
@@ -19,7 +21,7 @@ function Contact() {
   const handleSubmit = e => {
     e.preventDefault();
 
-    fetch('http://localhost/react/submit.php', {
+    fetch('http://localhost:3000/contact', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -29,6 +31,7 @@ function Contact() {
     .then(response => response.json())
     .then(data => {
       console.log('Success:', data);
+      setMessageStatus(data.message);
     })
     .catch((error) => {
       console.error('Error:', error);
@@ -37,13 +40,14 @@ function Contact() {
 
   return (
     <div className='container'>
+      {messageStatus && <div>{messageStatus}</div>}
         <form onSubmit={handleSubmit}>
         <div className="row">
                 <div className="col-25 clear-both">
                     <label htmlFor="fname">E-mail</label>
                 </div>
                 <div className="col-75">
-                    <input type="email" id="email" name="email" onChange={handleChange}/>
+                    <input type="email" id="email" name="email" value={form.email} onChange={handleChange}/>
                 </div>
                 </div>
                 <div className="row">
