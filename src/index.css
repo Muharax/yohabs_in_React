@@ -3,7 +3,9 @@
   box-sizing: border-box;
 }
 
-
+:root{
+  
+}
 
 body {
   background-image: url('./img/background.jpg');
@@ -18,7 +20,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
   
 }
-
+.msg-color{
+  color: #00ff00;
+}
+.AB{
+  position: absolute;
+  top: 9px;
+  left: 76px;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

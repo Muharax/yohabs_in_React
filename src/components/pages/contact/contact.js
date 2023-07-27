@@ -1,27 +1,33 @@
 import React, { useState } from 'react';
+import { URL } from '../../../config';
 
 function Contact() {
   const [form, setForm] = useState({
     email: '',
-    temat: '',
+    temat: 'Mam pytanie',
     wiadomosc: ''
   });
-
 
   const [messageStatus, setMessageStatus] = useState(null); // Nowy stan lokalny
 
 
   const handleChange = e => {
-    setForm({
-      ...form,
-      [e.target.name]: e.target.value
-    });
+      setForm({
+        ...form,
+        [e.target.name]: e.target.value
+      });
   };
 
   const handleSubmit = e => {
+
     e.preventDefault();
 
-    fetch('http://localhost:3000/contact', {
+    // if (!form.email||!form.wiadomosc) {
+    //   setMessageStatus('Uzupełnij dane');
+    //   return;
+    // }
+
+    fetch(`${URL}/contact`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -32,6 +38,7 @@ function Contact() {
     .then(data => {
       console.log('Success:', data);
       setMessageStatus(data.message);
+      // alert(`${data.message}`);
     })
     .catch((error) => {
       console.error('Error:', error);
@@ -39,15 +46,15 @@ function Contact() {
   };
 
   return (
-    <div className='container'>
-      {messageStatus && <div>{messageStatus}</div>}
+    <div className='container aaa'>
+      <div className='AB'>{messageStatus && <div className='msg-color'>{messageStatus}</div>}</div>
         <form onSubmit={handleSubmit}>
         <div className="row">
                 <div className="col-25 clear-both">
                     <label htmlFor="fname">E-mail</label>
                 </div>
                 <div className="col-75">
-                    <input type="email" id="email" name="email" value={form.email} onChange={handleChange}/>
+                    <input type="email" id="email" name="email" onChange={handleChange}/>
                 </div>
                 </div>
                 <div className="row">
@@ -55,7 +62,7 @@ function Contact() {
                     <label htmlFor="temat">Temat</label>
                 </div>
                 <div className="col-75">
-                    <select id="temat" name="temat" value={form.temat} onChange={handleChange}>
+                    <select id="temat" name="temat" onChange={handleChange}>
                         <option value="Mam Pytanie">Mam pytanie</option>
                         <option value="Coś nie działa na stronie">Coś nie działa na stronie</option>
                         <option value="Inne">Inne</option>
@@ -68,7 +75,7 @@ function Contact() {
                 </label>
                 </div>
                 <div className="col-75">
-                <textarea id="wiadomosc" placeholder="Write something.." name="wiadomosc" value={form.wiadomosc} onChange={handleChange}></textarea>
+                <textarea id="wiadomosc" placeholder="Write something.." name="wiadomosc" onChange={handleChange}></textarea>
                 </div>
                 </div>
 
