@@ -54,7 +54,7 @@ function Contact() {
                     <label htmlFor="fname">E-mail</label>
                 </div>
                 <div className="col-75">
-                    <input type="email" id="email" name="email" onChange={handleChange}/>
+                    <input type="text" id="email" name="email" onChange={handleChange}/>
                 </div>
                 </div>
                 <div className="row">
