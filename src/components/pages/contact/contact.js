@@ -22,10 +22,10 @@ function Contact() {
 
     e.preventDefault();
 
-    // if (!form.email||!form.wiadomosc) {
-    //   setMessageStatus('Uzupełnij dane');
-    //   return;
-    // }
+    if (!form.email||!form.wiadomosc) {
+      setMessageStatus('Uzupełnij dane');
+      return;
+    }
 
     fetch(`${URL}/contact`, {
       method: 'POST',
