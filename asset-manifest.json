@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/yohabs_in_React/static/css/main.4b2c49ec.css",
-    "main.js": "/yohabs_in_React/static/js/main.33ca8be2.js",
+    "main.js": "/yohabs_in_React/static/js/main.dc772713.js",
     "static/media/33.jpg": "/yohabs_in_React/static/media/33.210687d38df013f9570a.jpg",
     "static/media/29.jpg": "/yohabs_in_React/static/media/29.8899d0879134409f9650.jpg",
     "static/media/31.jpg": "/yohabs_in_React/static/media/31.055b2ec255a5146421d0.jpg",
@@ -45,10 +45,10 @@
     "static/media/background.jpg": "/yohabs_in_React/static/media/background.e07611a6be89e82ce5dc.jpg",
     "index.html": "/yohabs_in_React/index.html",
     "main.4b2c49ec.css.map": "/yohabs_in_React/static/css/main.4b2c49ec.css.map",
-    "main.33ca8be2.js.map": "/yohabs_in_React/static/js/main.33ca8be2.js.map"
+    "main.dc772713.js.map": "/yohabs_in_React/static/js/main.dc772713.js.map"
   },
   "entrypoints": [
     "static/css/main.4b2c49ec.css",
-    "static/js/main.33ca8be2.js"
+    "static/js/main.dc772713.js"
   ]
 }
